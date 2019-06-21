@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace LookUpEditDemo
+﻿Namespace LookUpEditDemo
 	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
@@ -31,11 +29,9 @@ Namespace LookUpEditDemo
 			Me.comboBoxEdit1 = New DevExpress.XtraEditors.ComboBoxEdit()
 			Me.lookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit()
 			Me.bindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-			Me.dsStorage1 = New LookUpEditDemo.DsStorage()
 			CType(Me.comboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.lookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.bindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.dsStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
 			' 
 			' labelControl1
@@ -73,12 +69,6 @@ Namespace LookUpEditDemo
 			' bindingSource1
 			' 
 			Me.bindingSource1.DataMember = "Countries"
-			Me.bindingSource1.DataSource = Me.dsStorage1
-			' 
-			' dsStorage1
-			' 
-			Me.dsStorage1.DataSetName = "DsStorage"
-			Me.dsStorage1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 			' 
 			' Form1
 			' 
@@ -91,11 +81,11 @@ Namespace LookUpEditDemo
 			Me.Controls.Add(Me.labelControl1)
 			Me.Name = "Form1"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			CType(Me.comboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.lookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.bindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.dsStorage1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)
 			Me.PerformLayout()
 
@@ -108,7 +98,6 @@ Namespace LookUpEditDemo
 		Private comboBoxEdit1 As DevExpress.XtraEditors.ComboBoxEdit
 		Private lookUpEdit1 As DevExpress.XtraEditors.LookUpEdit
 		Private bindingSource1 As System.Windows.Forms.BindingSource
-		Private dsStorage1 As DsStorage
 
 	End Class
 End Namespace

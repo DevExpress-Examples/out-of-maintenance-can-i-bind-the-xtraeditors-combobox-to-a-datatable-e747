@@ -12,28 +12,58 @@ namespace LookUpEditDemo {
             InitializeComponent();
         }
 
+        DataTable table;
         private void Form1_Load(object sender, EventArgs e) {
-            FillDataSet();
+            table = CreateTable();
             FillComboBox();
             SetupLookup();
         }
-        private void FillDataSet() {
-            dsStorage1.Countries.AddCountriesRow(840, "US");
-            dsStorage1.Countries.AddCountriesRow(124, "Canada");
-            dsStorage1.Countries.AddCountriesRow(36, "Australia");
-            dsStorage1.Countries.AddCountriesRow(826, "UK");
-            dsStorage1.Countries.AddCountriesRow(554, "New Zealand");
+
+        DataTable CreateTable()
+        {
+            DataTable table = new DataTable();
+            DataRow dataRow;
+
+            table.Columns.Add("ID", typeof(int));
+            table.Columns.Add("Name", typeof(string));
+
+            dataRow = table.NewRow();
+            dataRow["ID"] = 840;
+            dataRow["Name"] = "US";
+            table.Rows.Add(dataRow);
+
+            dataRow = table.NewRow();
+            dataRow["ID"] = 124;
+            dataRow["Name"] = "Canada";
+            table.Rows.Add(dataRow);
+
+            dataRow = table.NewRow();
+            dataRow["ID"] = 36;
+            dataRow["Name"] = "Australia";
+            table.Rows.Add(dataRow);
+
+            dataRow = table.NewRow();
+            dataRow["ID"] = 826;
+            dataRow["Name"] = "UK";
+            table.Rows.Add(dataRow);
+
+            dataRow = table.NewRow();
+            dataRow["ID"] = 554;
+            dataRow["Name"] = "New Zealand";
+            table.Rows.Add(dataRow);
+
+            return table;
         }
 
         public void FillComboBox() {
-            foreach(DataRow Row in dsStorage1.Countries.Rows) {
+            foreach(DataRow Row in table.Rows) {
                 comboBoxEdit1.Properties.Items.Add(Row["Name"]);
             }
             comboBoxEdit1.Properties.Sorted = true;
         }
 
         public void SetupLookup() {
-            lookUpEdit1.Properties.DataSource = dsStorage1.Countries;
+            lookUpEdit1.Properties.DataSource = table;
             lookUpEdit1.Properties.DisplayMember = "Name";
             lookUpEdit1.Properties.ValueMember = "ID";
             DevExpress.XtraEditors.Controls.LookUpColumnInfo col;

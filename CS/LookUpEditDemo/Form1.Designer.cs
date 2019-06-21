@@ -29,11 +29,9 @@ namespace LookUpEditDemo {
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dsStorage1 = new LookUpEditDemo.DsStorage();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsStorage1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -73,12 +71,6 @@ namespace LookUpEditDemo {
             // bindingSource1
             // 
             this.bindingSource1.DataMember = "Countries";
-            this.bindingSource1.DataSource = this.dsStorage1;
-            // 
-            // dsStorage1
-            // 
-            this.dsStorage1.DataSetName = "DsStorage";
-            this.dsStorage1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Form1
             // 
@@ -95,7 +87,6 @@ namespace LookUpEditDemo {
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsStorage1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,7 +99,6 @@ namespace LookUpEditDemo {
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private DsStorage dsStorage1;
 
     }
 }
